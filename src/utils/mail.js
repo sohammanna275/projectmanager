@@ -5,8 +5,8 @@ const sendEmail = async (options) => {
     const mailGenerator = new Mailgen({
         theme: "default",
         product: {
-            name: "Task Manager",
-            link: "https://taskmanagerlink.com"
+            name: "Project Flow",
+            link: process.env.APP_BASE_URL || "https://taskmanagerlink.com"
         }
     })
 
