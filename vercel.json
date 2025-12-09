@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "/api/index.js" 
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "public": true,
+  "outputDirectory": "public" 
+}
