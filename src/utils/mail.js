@@ -13,16 +13,17 @@ const sendEmail = async (options) => {
     const emailTextual = mailGenerator.generatePlaintext(options.mailgenContent);
     const emailHtml = mailGenerator.generate(options.mailgenContent);
     const transporter = nodemailer.createTransport({
-        host: process.env.MAILTRAP_SMTP_HOST,
-        port: process.env.MAILTRAP_SMTP_PORT,
+        host: process.env.MAIL_SMTP_HOST,
+        port: process.env.MAIL_SMTP_PORT,
+        secure: false,
         auth: {
-            user: process.env.MAILTRAP_SMTP_USER,
-            pass: process.env.MAILTRAP_SMTP_PASS
+            user: process.env.MAIL_USER,
+            pass: process.env.MAIL_PASS
         }
     })
 
     const mail = {
-        from: "mail.taskmanager@example.com",
+        from: process.env.MAIL_USER,
         to: options.email,
         subject: options.subject,
         text: emailTextual,
