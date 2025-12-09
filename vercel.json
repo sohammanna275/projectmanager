@@ -1,0 +1,14 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/v1/:path*",
+      "destination": "/api/auth.js" 
+    }
+  ],
+  "builds": [
+    {
+      "src": "api/auth.js",
+      "use": "@vercel/node"
+    }
+  ]
+}
