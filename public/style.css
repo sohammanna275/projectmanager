@@ -1,0 +1,225 @@
+/* Custom Properties */
+:root {
+    --color-primary: #4A90E2;
+    --color-secondary: #50E3C2;
+    --color-background: #1E212B;
+    --color-surface: #252831;
+    --color-text: #E5E5E5;
+    --color-text-secondary: #A0A0A0;
+    --color-error: #FF6B6B;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 8px;
+    --transition-speed: 0.3s;
+}
+
+/* Global Reset and Body Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header/Navigation */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: var(--color-surface);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color var(--transition-speed);
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+}
+
+/* Main Container and Card */
+.container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.card {
+    background-color: var(--color-surface);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+/* Form Styling */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #3A3F4C;
+    border-radius: var(--border-radius);
+    background-color: #2F323D;
+    color: var(--color-text);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform 0.1s;
+}
+
+.btn.primary {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    margin-top: 1rem;
+}
+
+.btn.primary:hover {
+    background-color: #387ad6; /* slightly darker primary */
+}
+
+.btn.secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    width: auto;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    margin: 0;
+}
+
+.btn.secondary:hover {
+    background-color: rgba(80, 227, 194, 0.1);
+}
+
+/* Footer Links */
+.footer-links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.footer-links a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Messages */
+.message {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: rgba(80, 227, 194, 0.2);
+    color: var(--color-secondary);
+}
+
+.message.error {
+    background-color: rgba(255, 107, 107, 0.2);
+    color: var(--color-error);
+}
+
+/* Dashboard Specific Styling */
+.container.dashboard {
+    align-items: flex-start;
+    padding-top: 5rem;
+}
+
+.dashboard .card {
+    max-width: 800px;
+}
+
+.dashboard .card p {
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+.dashboard .card .small-text {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header {
+        padding: 1rem 1.5rem;
+    }
+    .nav-link {
+        margin-left: 1rem;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+}
